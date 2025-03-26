@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Penrose Triangle</title>
+<style>
+  body {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    mix-blend-mode: difference;
+    color: red;
+    font-size: 4rem;
+    -webkit-text-stroke: 1px white;
+  }
+
+  .triangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vmin;
+    height: 100vmin;
+
+    clip-path: polygon(250px 30px,
+                  346px 30px,
+                  600px 488px,
+                  166px 488px,
+                  213px 406px,
+                  465px 406px,
+                   250px 30px);
+    }
+
+  .t1 { background: radial-gradient(circle, #FF0000, black) }
+  .t2 { background: radial-gradient(circle, #00FF00, black); transform-origin: 293px 360px; transform: rotate(120deg); }
+  .t3 { background: radial-gradient(circle, #0000FF, black); transform-origin: 293px 360px; transform: rotate(-120deg); }
+
+  main {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvw;
+    animation: rotate 50s linear reverse infinite;
+    transform-origin: 25% 30%;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: translate(20%, 40%) rotate(0deg) ;
+    }
+    to {
+      transform: translate(20%, 40%) rotate(360deg) ;
+    }
+  }
+
+</style>
+<header>
+  <p>A penrose triangle in CSS.
+  <p>It currently uses a <code>main</code> &amp; three paras.
+  <p>Challenge: do it with just one <code>main</code>.
+</header>
+<main>
+  <p class="triangle t1">Penrose t1</p>
+  <p class="triangle t2">Penrose t2</p>
+  <p class="triangle t3">Penrose t3</p>
+</main>
