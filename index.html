@@ -45,28 +45,24 @@
                    250px 30px);
     }
 
-  .t1 { background: radial-gradient(circle, #FF0000, black); transform-origin: 293px 360px; transform: translatex(-200px) translatey(-200px) }
-  .t2 { background: radial-gradient(circle, #00FF00, black); transform-origin: 293px 360px; transform: translatex(-200px) translatey(-200px) rotate(120deg); }
-  .t3 { background: radial-gradient(circle, #0000FF, black); transform-origin: 293px 360px; transform: translatex(-200px) translatey(-200px) rotate(-120deg); }
+  .t1 { background: radial-gradient(circle, #FF0000, black); transform-origin: 293px 360px; }
+  .t2 { background: radial-gradient(circle, #00FF00, black); transform-origin: 293px 360px; transform: rotate(120deg); }
+  .t3 { background: radial-gradient(circle, #0000FF, black); transform-origin: 293px 360px; transform: rotate(-120deg); }
 
   main {
     z-index: -1;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100dvw;
-    height: 100dvw;
+    inset: 0;
+    margin: auto;
+    width: 600px;
+    height: 600px;
     animation: rotate 50s linear reverse infinite;
-    transform-origin: 25% 30%;
+    transform-origin: 293px 360px;
   }
 
   @keyframes rotate {
-    from {
-      transform: translate(20%, 40%) rotate(0deg) ;
-    }
-    to {
-      transform: translate(20%, 40%) rotate(360deg) ;
-    }
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
   }
 
 </style>
